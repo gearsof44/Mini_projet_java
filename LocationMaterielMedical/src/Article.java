@@ -62,14 +62,17 @@ public class Article {
 		this.nbStock = nbStock;
 	}
 	
-	//Affiche les specificités de l'article
+	//Affiche les specificites de l'article
 	public void afficherArticles(){  
 		System.out.println("Reference: "+getRef());
 		System.out.println("Marque: "+getMarque());
 		System.out.println("Modele: "+getModele());
 		System.out.println("Prix de la location par jour: "+getPrixLocationJour());
 		System.out.println("Nombre restant en stock: "+getNbStock());
-
-
+	}
+	
+	public Article ajouterArticle(int ref, String marque, String modele, double prixLocationJour, int nbStock){
+		Article nouvelArticle = new Article(ref, marque, modele, prixLocationJour, nbStock);
+		return nouvelArticle;
 	}
 }
