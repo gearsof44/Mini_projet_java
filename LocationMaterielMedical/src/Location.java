@@ -58,6 +58,7 @@ public class Location {
 	 * @param montantFacture
 	 * @param coordonneesClient
 	 */
+	//Constructeur
 	public Location(ArrayList<Article> listeArticle, Date dateDebut, Date dateFin, double montantFacture, Client coordonneesClient) {
 		this.listeArticle = listeArticle;
 		this.dateDebut = dateDebut;

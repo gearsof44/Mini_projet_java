@@ -1,3 +1,7 @@
+/**
+ * @author GUILLET & COTTREL
+ *
+ */
 
 public class Client {
 
