@@ -6,6 +6,7 @@
 public class Magasin {
 	private String gerant;
 	private String coordonnées;
+	
 	//Constructeur
 
 	public Magasin(String gerant, String coordonnées) {
