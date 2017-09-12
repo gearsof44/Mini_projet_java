@@ -1,9 +1,15 @@
-
+/**
+ * 
+ * @author GUILLET & COTTREL
+ *
+ */
 public class TableEtLit extends Article{
 	private int poidsMax;
 	private String longueur;
 	private String largeur;
 	private String hauteur;
+	//Constructeur
+
 	public TableEtLit(int ref, String marque, String modele, double prixLocationJour, int nbStock, int poidsMax,
 			String longueur, String largeur, String hauteur) {
 		super(ref, marque, modele, prixLocationJour, nbStock);
@@ -12,6 +18,8 @@ public class TableEtLit extends Article{
 		this.largeur = largeur;
 		this.hauteur = hauteur;
 	}
+	//getter setter
+
 	public int getPoidsMax() {
 		return poidsMax;
 	}
@@ -36,4 +44,12 @@ public class TableEtLit extends Article{
 	public void setHauteur(String hauteur) {
 		this.hauteur = hauteur;
 	}
+	//Affiche l'article
+		public void afficherArticles(){  
+			super.afficherArticles();
+			System.out.println("longueur: "+getLongueur());
+			System.out.println("largeur: "+getLargeur());
+			System.out.println("hauteur: "+getHauteur());
+			System.out.println("poids maxium supporté: "+getPoidsMax());
+		}
 }
