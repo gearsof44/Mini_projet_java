@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author GUILLET & COTTREL
@@ -24,9 +26,12 @@ public class TableAtile extends TableEtLit{
 	}
 	
 	//Affiche l'article
-		public void afficherArticles(){  
-			super.afficherArticles();
-			if(isRabattre()){
+		public void afficherArticles(ArrayList<Article> articles){  
+			System.out.println("Reference: "+getRef());
+			System.out.println("Marque: "+getMarque());
+			System.out.println("Modele: "+getModele());
+			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
+			System.out.println("Nombre restant en stock: "+getNbStock());			if(isRabattre()){
 				System.out.println("La table peut se rabattre");
 			}else{
 				System.out.println("La table ne peut pas se rabattre");

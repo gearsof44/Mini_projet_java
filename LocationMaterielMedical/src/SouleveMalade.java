@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author GUILLET & COTTREL
@@ -30,9 +32,12 @@ public class SouleveMalade extends Article{
 	}
 	
 	//Affiche l'article
-		public void afficherArticles(){  
-			super.afficherArticles();
-			System.out.println("Capacité de levage: "+getCapaciteLevage());
+	public void afficherArticles(ArrayList<Article> articles) {
+			System.out.println("Reference: "+getRef());
+			System.out.println("Marque: "+getMarque());
+			System.out.println("Modele: "+getModele());
+			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
+			System.out.println("Nombre restant en stock: "+getNbStock());			System.out.println("Capacité de levage: "+getCapaciteLevage());
 			System.out.println("degré de pivot du fleau: "+getDegrePivotFleau());
 		}
 

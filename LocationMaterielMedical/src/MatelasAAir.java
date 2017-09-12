@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author GUILLET & COTTREL
@@ -67,8 +69,12 @@ public class MatelasAAir extends Article{
 	}
 	
 	//Affiche l'article
-	public void afficherArticles(){  
-		super.afficherArticles();
+	public void afficherArticles(ArrayList<Article> articles) {
+		System.out.println("Reference: "+getRef());
+		System.out.println("Marque: "+getMarque());
+		System.out.println("Modele: "+getModele());
+		System.out.println("Prix de la location par jour: "+getPrixLocationJour());
+		System.out.println("Nombre restant en stock: "+getNbStock());
 		System.out.println("longueur: "+getLongueur());
 		System.out.println("largeur: "+getLargeur());
 		System.out.println("hauteur: "+getHauteur());

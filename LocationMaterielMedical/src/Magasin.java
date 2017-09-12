@@ -16,15 +16,15 @@ public class Magasin {
 	 * @param coordonnées
 	 */
 	//Constructeur
-		public Magasin(String gerant, String coordonnées, ArrayList<Article> listeArticle) {
-		this.gerant = gerant;
-		this.coordonnées = coordonnées;
-		this.listeArticle = listeArticle;
+	public Magasin(String gerant, String coordonnées, ArrayList<Article> listeArticle) {
+	this.gerant = gerant;
+	this.coordonnées = coordonnées;
+	this.listeArticle = listeArticle;
 	}
 		
-		public void main (String args[]){
-			Article
-		}
+	public void main (String args[]){
+		
+	}
 	
 	//getter setter
 	public String getGerant() {
@@ -45,4 +45,5 @@ public class Magasin {
 	public void setListeArticle(ArrayList<Article> listeArticle) {
 		this.listeArticle = listeArticle;
 	}	
+	
 }
