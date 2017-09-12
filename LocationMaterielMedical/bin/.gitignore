@@ -1,8 +1,16 @@
 /Article.class
+<<<<<<< HEAD
+/MatelasAAir.class
+/Location.class
+/Client.class
+/FauteuilRoulant.class
+/LitMecanise.class
+=======
 /FauteuilRoulant.class
 /LitMecanise.class
 /Magasin.class
 /MatelasAAir.class
+>>>>>>> 09f4e0064c72a682e9b18e639863e5aa8ca534d1
 /SouleveMalade.class
 /TableAtile.class
 /TableEtLit.class

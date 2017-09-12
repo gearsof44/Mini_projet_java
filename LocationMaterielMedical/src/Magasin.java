@@ -7,13 +7,17 @@ public class Magasin {
 	private String gerant;
 	private String coordonnées;
 	
+	/**
+	 * @param gerant
+	 * @param coordonnées
+	 */
 	//Constructeur
-
 	public Magasin(String gerant, String coordonnées) {
 		super();
 		this.gerant = gerant;
 		this.coordonnées = coordonnées;
 	}
+	
 	//getter setter
 
 	public String getGerant() {

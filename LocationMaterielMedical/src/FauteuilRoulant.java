@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author GUILLET & COTTREL
@@ -6,14 +8,25 @@
 public class FauteuilRoulant extends Article{
 	private int largeurAssise;
 	private double poidsFauteuil;
+	
+	/**
+	 * @param ref
+	 * @param marque
+	 * @param modele
+	 * @param prixLocationJour
+	 * @param nbStock
+	 * @param largeurAssise
+	 * @param poidsFauteuil
+	 */
 	//Constructeur
-
+	
 	public FauteuilRoulant(int ref, String marque, String modele, double prixLocationJour, int nbStock,
 			int largeurAssise, double poidsFauteuil) {
 		super(ref, marque, modele, prixLocationJour, nbStock);
 		this.largeurAssise = largeurAssise;
 		this.poidsFauteuil = poidsFauteuil;
 	}
+	
 	//getter setter
 
 	public int getLargeurAssise() {
@@ -28,10 +41,17 @@ public class FauteuilRoulant extends Article{
 	public void setPoidsFauteuil(double poidsFauteuil) {
 		this.poidsFauteuil = poidsFauteuil;
 	}
+	
 	//Affiche l'article
-		public void afficherArticles(){  
-			super.afficherArticles();
-			System.out.println("Largeur de la place assise: "+getLargeurAssise());
-			System.out.println("Poids total du fauteil: "+getPoidsFauteuil());
+		
+
+		@Override
+		public void afficherArticles(ArrayList<Article> articles) {
+			System.out.println("Reference: "+getRef());
+			System.out.println("Marque: "+getMarque());
+			System.out.println("Modele: "+getModele());
+			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
+			System.out.println("Nombre restant en stock: "+getNbStock());			System.out.println("Largeur de la place assise: "+getLargeurAssise());
+			System.out.println("Poids total du fauteil: "+getPoidsFauteuil());			
 		}
 }

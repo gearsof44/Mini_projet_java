@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * @author GUILLET & COTTREL
@@ -10,8 +12,20 @@ public class MatelasAAir extends Article{
 	private String hauteur;
 	private double poidsMax;
 	private int tempsGonflage;
+	
+	/**
+	 * @param ref
+	 * @param marque
+	 * @param modele
+	 * @param prixLocationJour
+	 * @param nbStock
+	 * @param longueur
+	 * @param largeur
+	 * @param hauteur
+	 * @param poindMax
+	 * @param tempsGonflage
+	 */
 	//Constructeur
-
 	public MatelasAAir(int ref, String marque, String modele, double prixLocationJour, int nbStock, String longueur,
 			String largeur, String hauteur, double poidsMax, int tempsGonflage) {
 		super(ref, marque, modele, prixLocationJour, nbStock);
@@ -53,9 +67,14 @@ public class MatelasAAir extends Article{
 	public void setTempsGonflage(int tempsGonflage) {
 		this.tempsGonflage = tempsGonflage;
 	}
+	
 	//Affiche l'article
-	public void afficherArticles(){  
-		super.afficherArticles();
+	public void afficherArticles(ArrayList<Article> articles) {
+		System.out.println("Reference: "+getRef());
+		System.out.println("Marque: "+getMarque());
+		System.out.println("Modele: "+getModele());
+		System.out.println("Prix de la location par jour: "+getPrixLocationJour());
+		System.out.println("Nombre restant en stock: "+getNbStock());
 		System.out.println("longueur: "+getLongueur());
 		System.out.println("largeur: "+getLargeur());
 		System.out.println("hauteur: "+getHauteur());
