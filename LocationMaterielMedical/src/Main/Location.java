@@ -85,6 +85,11 @@ public class Location {
 		Location nouvelleLocation = new Location(articlesCommandes, dateDebut, dateFin, prixLocation, client);
 		return nouvelleLocation;
 	}
+	@Override
+	public String toString() {
+		return "Location [id=" + id + ", listeArticle=" + listeArticle + ", dateDebut=" + dateDebut + ", dateFin="
+				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
+	}
 	
 	
 	
