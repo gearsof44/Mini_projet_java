@@ -21,6 +21,10 @@ public class Magasin {
 		this.coordonnées = coordonnées;
 		this.listeArticle = listeArticle;
 	}
+		
+		public void main (String args[]){
+			Article
+		}
 	
 	//getter setter
 	public String getGerant() {

@@ -3,7 +3,7 @@
  * @author GUILLET & COTTREL
  *
  */
-public class Article {
+public abstract class Article {
 	
 	private int ref;
 	private String marque;
@@ -17,12 +17,9 @@ public class Article {
 	 * @param marque
 	 * @param modele
 	 * @param prixLocationJour
-	 * @pa
->>>>>>> 09f4e0064c72a682e9b18e639863e5aa8ca534d1ram nbStock
 	 */
 	//Constructeur
 	public Article(int ref, String marque, String modele, double prixLocationJour, int nbStock) {
-		super();
 		this.ref = ref;
 		this.marque = marque;
 		this.modele = modele;
@@ -71,8 +68,5 @@ public class Article {
 		System.out.println("Nombre restant en stock: "+getNbStock());
 	}
 	
-	public Article ajouterArticle(int ref, String marque, String modele, double prixLocationJour, int nbStock){
-		Article nouvelArticle = new Article(ref, marque, modele, prixLocationJour, nbStock);
-		return nouvelArticle;
-	}
+	public abstract Article ajouterArticle(int ref, String marque, String modele, double prixLocationJour, int nbStock);
 }
