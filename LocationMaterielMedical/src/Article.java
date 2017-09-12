@@ -22,7 +22,6 @@ public abstract class Article {
 	 */
 	//Constructeur
 	public Article(int ref, String marque, String modele, double prixLocationJour, int nbStock) {
-		super();
 		this.ref = ref;
 		this.marque = marque;
 		this.modele = modele;
@@ -62,6 +61,9 @@ public abstract class Article {
 		this.nbStock = nbStock;
 	}
 	
+
 	//Affiche les specificités de l'article
 	public abstract void afficherArticles(ArrayList<Article> articles);
+
+
 }
