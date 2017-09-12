@@ -6,6 +6,19 @@ public class MatelasAAir extends Article{
 	private String hauteur;
 	private double poindMax;
 	private int tempsGonflage;
+	
+	/**
+	 * @param ref
+	 * @param marque
+	 * @param modele
+	 * @param prixLocationJour
+	 * @param nbStock
+	 * @param longueur
+	 * @param largeur
+	 * @param hauteur
+	 * @param poindMax
+	 * @param tempsGonflage
+	 */
 	public MatelasAAir(int ref, String marque, String modele, double prixLocationJour, int nbStock, String longueur,
 			String largeur, String hauteur, double poindMax, int tempsGonflage) {
 		super(ref, marque, modele, prixLocationJour, nbStock);

@@ -30,6 +30,13 @@ public class Client {
 	public void setNumTel(String numTel) {
 		this.numTel = numTel;
 	}
+	
+	/**
+	 * @param nom
+	 * @param prenom
+	 * @param adresse
+	 * @param numTel
+	 */
 	public Client(String nom, String prenom, String adresse, String numTel) {
 		super();
 		this.nom = nom;

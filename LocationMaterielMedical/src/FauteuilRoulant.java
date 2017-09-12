@@ -3,6 +3,15 @@ public class FauteuilRoulant extends Article{
 	private int largeurAssise;
 	private double poidsFauteuil;
 	
+	/**
+	 * @param ref
+	 * @param marque
+	 * @param modele
+	 * @param prixLocationJour
+	 * @param nbStock
+	 * @param largeurAssise
+	 * @param poidsFauteuil
+	 */
 	public FauteuilRoulant(int ref, String marque, String modele, double prixLocationJour, int nbStock,
 			int largeurAssise, double poidsFauteuil) {
 		super(ref, marque, modele, prixLocationJour, nbStock);

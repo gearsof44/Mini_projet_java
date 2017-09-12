@@ -1,4 +1,9 @@
 
+/**
+ * @author GUILLET & COTTREL
+ *
+ */
+
 public class SouleveMalade extends Article{
 	private int capaciteLevage;
 	private int degrePivotFleau;
