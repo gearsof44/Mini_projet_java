@@ -62,9 +62,13 @@ public abstract class Article {
 		this.nbStock = nbStock;
 	}
 	
-
+	public static void afficherTousArticles(ArrayList<Article> listeArticle){
+	for(Article a:listeArticle){
+		a.afficherArticles();
+		}
+}
 	//Affiche les specificités de l'article
-	public abstract void afficherArticles(ArrayList<Article> articles);
+	public abstract void afficherArticles();
 
 
 }

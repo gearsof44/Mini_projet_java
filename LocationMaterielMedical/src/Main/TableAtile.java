@@ -27,7 +27,7 @@ public class TableAtile extends TableEtLit{
 	}
 	
 	//Affiche l'article
-		public void afficherArticles(ArrayList<Article> articles){  
+		public void afficherArticles(){  
 			System.out.println("Reference: "+getRef());
 			System.out.println("Marque: "+getMarque());
 			System.out.println("Modele: "+getModele());
