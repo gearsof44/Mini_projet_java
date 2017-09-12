@@ -67,8 +67,8 @@ public abstract class Article {
 		a.afficherArticles();
 		}
 }
+
 	//Affiche les specificités de l'article
 	public abstract void afficherArticles();
-
 
 }

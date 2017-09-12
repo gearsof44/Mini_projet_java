@@ -17,10 +17,14 @@ public class Magasin {
 	 * @param coordonnées
 	 */
 	//Constructeur
-		public Magasin(String gerant, String coordonnées, ArrayList<Article> listeArticle) {
-		this.gerant = gerant;
-		this.coordonnées = coordonnées;
-		this.listeArticle = listeArticle;
+	public Magasin(String gerant, String coordonnées, ArrayList<Article> listeArticle) {
+	this.gerant = gerant;
+	this.coordonnées = coordonnées;
+	this.listeArticle = listeArticle;
+	}
+		
+	public void main (String args[]){
+		
 	}
 	
 	//getter setter
