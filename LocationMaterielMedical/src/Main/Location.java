@@ -7,6 +7,7 @@ import java.util.Date;
  *
  */
 public class Location {
+	 //attributs
 
 	private int id;
 	private ArrayList<Article> listeArticle;
@@ -14,6 +15,7 @@ public class Location {
 	private Date dateFin;
 	private double montantFacture;
 	private Client coordonneesClient;
+	//getter setter
 	
 	public int getId() {
 		return id;
@@ -87,18 +89,26 @@ public class Location {
 	}
 	@Override
 	public String toString() {
-		String strListeArticle;
-		for (Article art : listeArticle){
-			art.toString();
-		}
 		return "Location [id=" + id + ", listeArticle=" + listeArticle + ", dateDebut=" + dateDebut + ", dateFin="
 				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
 	}
 	
-	public void ArchiverLocation(Location location){
-		
+	public void afficherLocation(){
+		System.out.println("Identifiant"+getId());
+		System.out.println("Client: "+getCoordonneesClient());
+		System.out.println("Date de début: "+getDateDebut());
+		System.out.println("Date de fin: "+getDateFin());
+		System.out.println("Liste des articles: ");
+		Article.afficherTousArticles(getListeArticle());
 	}
 	
+	public static void afficherLocationClient(ArrayList<Location> listeLocation, Client locClient){
+		for(Location loc:listeLocation){
+			if(loc.getCoordonneesClient()==locClient){
+				loc.afficherLocation();
+			}
+		}
+	}
 	
 	
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  *
  */
 public class MatelasAAir extends Article{
+	 //attributs
 
 	private String longueur;
 	private String largeur;
@@ -83,12 +84,4 @@ public class MatelasAAir extends Article{
 		System.out.println("temps de gonflage: "+getTempsGonflage());
 
 	}
-
-	@Override
-	public String toString() {
-		return "MatelasAAir ["+super.toString()+", longueur=" + longueur + ", largeur=" + largeur + ", hauteur=" + hauteur + ", poidsMax="
-				+ poidsMax + ", tempsGonflage=" + tempsGonflage + "]";
-	}
-	
-	
 }

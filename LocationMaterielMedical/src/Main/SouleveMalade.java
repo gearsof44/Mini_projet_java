@@ -7,6 +7,8 @@ import java.util.ArrayList;
  *
  */
 public class SouleveMalade extends Article{
+	 //attributs
+
 	private int capaciteLevage;
 	private int degrePivotFleau;
 	
@@ -38,16 +40,9 @@ public class SouleveMalade extends Article{
 			System.out.println("Marque: "+getMarque());
 			System.out.println("Modele: "+getModele());
 			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
-			System.out.println("Nombre restant en stock: "+getNbStock());			System.out.println("Capacité de levage: "+getCapaciteLevage());
+			System.out.println("Nombre restant en stock: "+getNbStock());
+			System.out.println("Capacité de levage: "+getCapaciteLevage());
 			System.out.println("degré de pivot du fleau: "+getDegrePivotFleau());
 		}
-
-	@Override
-	public String toString() {
-		return "SouleveMalade ["+super.toString() +", capaciteLevage=" + capaciteLevage + ", degrePivotFleau=" + degrePivotFleau
-				+ "]";
-	}
-	
-	
 
 }

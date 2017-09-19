@@ -7,6 +7,8 @@ import java.util.ArrayList;
  *
  */
 public class TableEtLit extends Article{
+	 //attributs
+
 	private int poidsMax;
 	private String longueur;
 	private String largeur;
@@ -61,23 +63,5 @@ public class TableEtLit extends Article{
 	
 	//Affiche l'article
 	public void afficherArticles() {
-			System.out.println("Reference: "+getRef());
-			System.out.println("Marque: "+getMarque());
-			System.out.println("Modele: "+getModele());
-			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
-			System.out.println("Nombre restant en stock: "+getNbStock());
-			System.out.println("longueur: "+getLongueur());
-			System.out.println("largeur: "+getLargeur());
-			System.out.println("hauteur: "+getHauteur());
-			System.out.println("poids maximum supporté: "+getPoidsMax());
 		}
-
-	@Override
-	public String toString() {
-		return super.toString() + ", " +"poidsMax=" + poidsMax + ", longueur=" + longueur + ", largeur=" + largeur + ", hauteur="
-				+ hauteur;
-	}
- 
-	
-	
 }

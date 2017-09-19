@@ -7,7 +7,8 @@ import java.util.ArrayList;
  *
  */
 public abstract class Article {
-	
+	 //attributs
+
 	private int ref;
 	private String marque;
 	private String modele;
@@ -66,15 +67,9 @@ public abstract class Article {
 	for(Article a:listeArticle){
 		a.afficherArticles();
 		}
-	}
+}
 
-	@Override
-	public String toString() {
-		return "ref=" + ref + ", marque=" + marque + ", modele=" + modele + ", prixLocationJour="
-				+ prixLocationJour + ", nbStock=" + nbStock;
-	}
-
-	//Affiche les specificites de l'article
+	//Affiche les specificités de l'article
 	public abstract void afficherArticles();
 
 }

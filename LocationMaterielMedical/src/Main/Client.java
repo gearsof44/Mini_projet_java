@@ -5,14 +5,22 @@ package Main;
  */
 
 public class Client {
-
+ //attributs
+	private int id;
 	private String nom;
 	private String prenom;
 	private String adresse;
 	private String numTel;
+	//getter setter
 	
 	public String getNom() {
 		return nom;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
@@ -42,8 +50,10 @@ public class Client {
 	 * @param adresse
 	 * @param numTel
 	 */
-	public Client(String nom, String prenom, String adresse, String numTel) {
+	//constructeur
+	public Client(int id,String nom, String prenom, String adresse, String numTel) {
 		super();
+		this.id=id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
