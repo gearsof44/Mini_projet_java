@@ -68,29 +68,8 @@ public class Location {
 		this.coordonneesClient = coordonneesClient;
 	}
 	
-	/**
-	 * @param client
-	 * @param articlesCommandes
-	 * @param dateDebut
-	 * @param dateFin
-	 * @return
-	 */
-	public Location AjouterLocation(Client client, ArrayList<Article> articlesCommandes, Date dateDebut, Date dateFin){
-		double prixLocation = 0;
-		for (Article art : articlesCommandes){
-			double nbJourLoc = dateFin.getDate() - dateDebut.getDate();
-			double prixParJour = art.getPrixLocationJour();
-			prixLocation += nbJourLoc*prixParJour;
-		}
-		Location nouvelleLocation = new Location(articlesCommandes, dateDebut, dateFin, prixLocation, client);
-		return nouvelleLocation;
-	}
 	@Override
 	public String toString() {
-		String strListeArticle;
-		for (Article art : listeArticle){
-			art.toString();
-		}
 		return "Location [id=" + id + ", listeArticle=" + listeArticle + ", dateDebut=" + dateDebut + ", dateFin="
 				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
 	}
@@ -98,7 +77,5 @@ public class Location {
 	public void ArchiverLocation(Location location){
 		
 	}
-	
-	
 	
 }
