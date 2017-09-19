@@ -93,7 +93,7 @@ public class Location {
 			strListeArticle += art.toString();
 		}
  		return "Location [id=" + id + ", listeArticle=" + strListeArticle + ", dateDebut=" + dateDebut + ", dateFin="
- 				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
+ 				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + "nom : "+ coordonneesClient.getNom() + ", prenom : "+ coordonneesClient.getPrenom() +", num tel : "+ coordonneesClient.getNumTel() + "]";
  	}
 	
 }
