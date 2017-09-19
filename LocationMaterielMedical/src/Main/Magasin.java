@@ -8,6 +8,8 @@ import java.util.Date;
  *
  */
 public class Magasin {
+	 //attributs
+
 	private String gerant;
 	private String coordonnées;
 	private ArrayList<Article> listeArticle;

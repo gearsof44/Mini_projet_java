@@ -20,10 +20,9 @@ public class TestLocation {
 		listeArticleTest.add(new TableAtile(1224, "Soulevator", "SV-6", 2, 14, 4, "14cm","45cm", "85cm", true));
 		Date dateDebutTest = new Date(2017,9,6);
 		Date dateFinTest = new Date(2017,9,17);
-		Client myClientTest = new Client("DIDIER", "Jean", "ICI", "0658459545", null);
+		Client myClientTest = new Client(1, "DIDIER", "Jean", "ICI", "0658459545", null);
 		Location loc = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
 		myClientTest.AjouterLocation(loc);
-		
 		System.out.println(loc.toString());
 	}
 

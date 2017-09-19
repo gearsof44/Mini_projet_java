@@ -9,15 +9,23 @@ import java.util.Date;
  */
 
 public class Client {
-
+	//attributs
+	private int id;
 	private String nom;
 	private String prenom;
 	private String adresse;
 	private String numTel;
 	private ArrayList<Location> listeLocation;
+	//getter setter
 	
 	public String getNom() {
 		return nom;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
@@ -52,20 +60,14 @@ public class Client {
 	public void AjouterLocation(Location loc){
 		listeLocation.add(loc);
 	}
-	
+
 	public void RetirerLocation(Location loc){
 		listeLocation.remove(loc);
 	}
-		
-	/**
-	 * @param nom
-	 * @param prenom
-	 * @param adresse
-	 * @param numTel
-	 * @param listeLocation
-	 */
-	public Client(String nom, String prenom, String adresse, String numTel, ArrayList<Location> listeLocation) {
+
+	public Client(int id, String nom, String prenom, String adresse, String numTel, ArrayList<Location> listeLocation) {
 		super();
+		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
