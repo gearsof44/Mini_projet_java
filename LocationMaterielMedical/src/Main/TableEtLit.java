@@ -69,6 +69,15 @@ public class TableEtLit extends Article{
 			System.out.println("longueur: "+getLongueur());
 			System.out.println("largeur: "+getLargeur());
 			System.out.println("hauteur: "+getHauteur());
-			System.out.println("poids maxium supporté: "+getPoidsMax());
+			System.out.println("poids maximum supporté: "+getPoidsMax());
 		}
+
+	@Override
+	public String toString() {
+		return super.toString() + ", " +"poidsMax=" + poidsMax + ", longueur=" + longueur + ", largeur=" + largeur + ", hauteur="
+				+ hauteur;
+	}
+ 
+	
+	
 }

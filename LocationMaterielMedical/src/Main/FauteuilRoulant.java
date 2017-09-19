@@ -55,4 +55,12 @@ public class FauteuilRoulant extends Article{
 			System.out.println("Nombre restant en stock: "+getNbStock());			System.out.println("Largeur de la place assise: "+getLargeurAssise());
 			System.out.println("Poids total du fauteil: "+getPoidsFauteuil());			
 		}
+
+		@Override
+		public String toString() {
+			return "FauteuilRoulant ["+super.toString() +", largeurAssise=" + largeurAssise + ", poidsFauteuil=" + poidsFauteuil
+					+"]";
+		}
+		
+		
 }

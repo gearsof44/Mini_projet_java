@@ -42,4 +42,12 @@ public class SouleveMalade extends Article{
 			System.out.println("degré de pivot du fleau: "+getDegrePivotFleau());
 		}
 
+	@Override
+	public String toString() {
+		return "SouleveMalade ["+super.toString() +", capaciteLevage=" + capaciteLevage + ", degrePivotFleau=" + degrePivotFleau
+				+ "]";
+	}
+	
+	
+
 }

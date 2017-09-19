@@ -87,8 +87,16 @@ public class Location {
 	}
 	@Override
 	public String toString() {
+		String strListeArticle;
+		for (Article art : listeArticle){
+			art.toString();
+		}
 		return "Location [id=" + id + ", listeArticle=" + listeArticle + ", dateDebut=" + dateDebut + ", dateFin="
 				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
+	}
+	
+	public void ArchiverLocation(Location location){
+		
 	}
 	
 	

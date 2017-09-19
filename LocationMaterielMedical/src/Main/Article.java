@@ -66,9 +66,15 @@ public abstract class Article {
 	for(Article a:listeArticle){
 		a.afficherArticles();
 		}
-}
+	}
 
-	//Affiche les specificités de l'article
+	@Override
+	public String toString() {
+		return "ref=" + ref + ", marque=" + marque + ", modele=" + modele + ", prixLocationJour="
+				+ prixLocationJour + ", nbStock=" + nbStock;
+	}
+
+	//Affiche les specificites de l'article
 	public abstract void afficherArticles();
 
 }
