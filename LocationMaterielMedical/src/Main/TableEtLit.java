@@ -64,4 +64,10 @@ public class TableEtLit extends Article{
 	//Affiche l'article
 	public void afficherArticles() {
 		}
+	
+	@Override
+	public String toString() {
+		return super.toString() + ", " +"poidsMax=" + poidsMax + ", longueur=" + longueur + ", largeur=" + largeur + ", hauteur="
+				+ hauteur;
+	}
 }

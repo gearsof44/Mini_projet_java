@@ -54,5 +54,10 @@ public class LitMecanise extends TableEtLit{
 
 			System.out.println("Degré d'inclinaison: "+getDegreInclinaison());
 		}
+		
+	@Override
+	public String toString() {
+		return "LitMecanise ["+super.toString() + ", "+ "degreInclinaison=" + degreInclinaison +"]";
+	}
 
 }

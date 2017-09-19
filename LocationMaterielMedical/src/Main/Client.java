@@ -9,6 +9,7 @@ import java.util.Date;
  */
 
 public class Client {
+	
 	//attributs
 	private int id;
 	private String nom;
@@ -16,8 +17,8 @@ public class Client {
 	private String adresse;
 	private String numTel;
 	private ArrayList<Location> listeLocation;
-	//getter setter
 	
+	//getter setter
 	public String getNom() {
 		return nom;
 	}
@@ -52,21 +53,19 @@ public class Client {
 	public ArrayList<Location> getListeLocation() {
 		return listeLocation;
 	}
-	
 	public void setListeLocation(ArrayList<Location> listeLocation) {
 		this.listeLocation = listeLocation;
 	}
 	
 	public void AjouterLocation(Location loc){
-		listeLocation.add(loc);
+		this.listeLocation.add(loc);
 	}
 
 	public void RetirerLocation(Location loc){
-		listeLocation.remove(loc);
+		this.listeLocation.remove(loc);
 	}
 
 	public Client(int id, String nom, String prenom, String adresse, String numTel, ArrayList<Location> listeLocation) {
-		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -74,10 +73,15 @@ public class Client {
 		this.numTel = numTel;
 		this.listeLocation = listeLocation;
 	}
+
 	@Override
 	public String toString() {
+		String strListeLocation = "Pas de location en cours";
+		for (Location o : listeLocation){
+			strListeLocation += o.toString();
+		}
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTel=" + numTel
-				+ ", listeLocation=" + listeLocation;
+				+ ", listeLocation=" + strListeLocation;
 	}
 	
 	

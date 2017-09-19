@@ -48,13 +48,20 @@ public class FauteuilRoulant extends Article{
 	//Affiche l'article
 		
 
-		@Override
-		public void afficherArticles() {
-			System.out.println("Reference: "+getRef());
-			System.out.println("Marque: "+getMarque());
-			System.out.println("Modele: "+getModele());
-			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
-			System.out.println("Nombre restant en stock: "+getNbStock());			System.out.println("Largeur de la place assise: "+getLargeurAssise());
-			System.out.println("Poids total du fauteil: "+getPoidsFauteuil());			
-		}
+	@Override
+	public void afficherArticles() {
+		System.out.println("Reference: "+getRef());
+		System.out.println("Marque: "+getMarque());
+		System.out.println("Modele: "+getModele());
+		System.out.println("Prix de la location par jour: "+getPrixLocationJour());
+		System.out.println("Nombre restant en stock: "+getNbStock());			System.out.println("Largeur de la place assise: "+getLargeurAssise());
+		System.out.println("Poids total du fauteil: "+getPoidsFauteuil());			
+	}
+	
+	@Override
+	public String toString() {
+		return "FauteuilRoulant ["+super.toString() +", largeurAssise=" + largeurAssise + ", poidsFauteuil=" + poidsFauteuil
+				+"]";
+	}
+	
 }

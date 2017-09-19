@@ -70,12 +70,6 @@ public class Location {
 		this.coordonneesClient = coordonneesClient;
 	}
 	
-	@Override
-	public String toString() {
-		return "Location [id=" + id + ", listeArticle=" + listeArticle + ", dateDebut=" + dateDebut + ", dateFin="
-				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
-	}
-	
 	public void afficherLocation(){
 		System.out.println("Identifiant"+getId());
 		System.out.println("Client: "+getCoordonneesClient());
@@ -91,5 +85,15 @@ public class Location {
 			loc.afficherLocation();
 		}
 	}
+	
+	@Override
+ 	public String toString() {
+		String strListeArticle = "Pas d'articles";
+		for (Article art : listeArticle){
+			strListeArticle += art.toString();
+		}
+ 		return "Location [id=" + id + ", listeArticle=" + strListeArticle + ", dateDebut=" + dateDebut + ", dateFin="
+ 				+ dateFin + ", montantFacture=" + montantFacture + ", coordonneesClient=" + coordonneesClient + "]";
+ 	}
 	
 }

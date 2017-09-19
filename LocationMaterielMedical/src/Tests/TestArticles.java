@@ -18,5 +18,10 @@ public class TestArticles {
 		listeArticle.add(mataa);
 		listeArticle.add(tabat);
 		Main.Article.afficherTousArticles(listeArticle);
+		System.out.println(soum.toString());
+		System.out.println(litm.toString());
+		System.out.println(fautr.toString());
+		System.out.println(mataa.toString());
+		System.out.println(tabat.toString());
 	}
 }

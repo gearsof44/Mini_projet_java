@@ -45,4 +45,9 @@ public class TableAtile extends TableEtLit{
 				System.out.println("La table ne peut pas se rabattre");
 			}
 		}
+	
+	@Override
+	public String toString() {
+		return "TableAtile ["+super.toString()+", rabattre=" + rabattre + "]";
+	}
 }
