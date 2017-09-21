@@ -22,9 +22,7 @@ public static void main (String args[]) throws IOException{
 		Location loc = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
 		Location loc2 = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, null);
 		myClientTest.AjouterLocation(loc);
-		System.out.println(myClientTest.getListeLocation());
 		myClientTest.RetirerLocation(loc);
-		System.out.println(myClientTest.getListeLocation());
 		
 	}
 }

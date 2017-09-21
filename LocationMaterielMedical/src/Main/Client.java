@@ -71,36 +71,52 @@ public class Client {
 			strmonthEnd = "0"+strmonthEnd;
 		}
 		String stryearEnd = Integer.toString(loc.getDateFin().getYear());
-		String outputFile = logPath+stryearEnd+strmonthEnd+".csv";
+		String outputFileCsv = logPath+stryearEnd+strmonthEnd+".loc.csv";
+		String outputFileRecette = logPath+"recette.csv";
 		final String COMMA_DELIMITER = ",";
 		final String NEW_LINE_SEPARATOR = "\n";
-		
-		final String FILE_HEADER = "id,listeArticle,dateDebut,dateFin,montantFacture,coordonneesClient";
-		FileWriter fileWriter = null;
+		File fLog = new File(outputFileCsv);
+		File fRecette = new File(outputFileRecette);
+		final String FILE_HEADER_LOG = "id,listeArticle,dateDebut,dateFin,montantFacture,coordonneesClient";
+		final String FILE_HEADER_RECETTE = "date,montantFacture";
+		FileWriter fileWriterLog = null;
+		FileWriter fileWriterRecette = null;
 		try {
-			fileWriter = new FileWriter(outputFile, true);
-			fileWriter.append(FILE_HEADER.toString());
-			fileWriter.append(NEW_LINE_SEPARATOR);
-			fileWriter.append(String.valueOf(loc.getId()));
-			fileWriter.append(COMMA_DELIMITER);
-			fileWriter.append(String.valueOf(loc.getListeArticle()));
-			fileWriter.append(COMMA_DELIMITER);
-			fileWriter.append(String.valueOf(loc.getDateDebut()));
-			fileWriter.append(COMMA_DELIMITER);
-			fileWriter.append(String.valueOf(loc.getDateFin()));
-			fileWriter.append(COMMA_DELIMITER);
-			fileWriter.append(String.valueOf(loc.getMontantFacture()));
-			fileWriter.append(COMMA_DELIMITER);
-			fileWriter.append(String.valueOf(loc.getCoordonneesClient()));
-			fileWriter.append(NEW_LINE_SEPARATOR);
+			fileWriterLog = new FileWriter(outputFileCsv, true);
+			if (! fLog.exists()){
+				fileWriterLog.append(FILE_HEADER_LOG.toString());
+				fileWriterLog.append(NEW_LINE_SEPARATOR);
+			}
+			fileWriterLog.append(String.valueOf(loc.getId()));
+			fileWriterLog.append(COMMA_DELIMITER);
+			fileWriterLog.append(String.valueOf(loc.getListeArticle()));
+			fileWriterLog.append(COMMA_DELIMITER);
+			fileWriterLog.append(String.valueOf(loc.getDateDebut()));
+			fileWriterLog.append(COMMA_DELIMITER);
+			fileWriterLog.append(String.valueOf(loc.getDateFin()));
+			fileWriterLog.append(COMMA_DELIMITER);
+			fileWriterLog.append(String.valueOf(loc.getMontantFacture()));
+			fileWriterLog.append(COMMA_DELIMITER);
+			fileWriterLog.append(String.valueOf(loc.getCoordonneesClient()));
 			System.out.println("CSV log file was created successfully !!!");
+			fileWriterRecette = new FileWriter(outputFileRecette, true);
+			if (! fRecette.exists()){
+				fileWriterRecette.append(FILE_HEADER_RECETTE.toString());
+				fileWriterRecette.append(NEW_LINE_SEPARATOR);
+			}
+			fileWriterRecette.append(String.valueOf(loc.getDateFin()));
+			fileWriterRecette.append(COMMA_DELIMITER);
+			fileWriterRecette.append(String.valueOf(loc.getMontantFacture()));
+			System.out.println("CSV recette file was created successfully !!!");
 		} catch (Exception e) {
 			System.out.println("Error in CsvFileWriter !!!");
 			e.printStackTrace();
 		}finally {
 			try {
-				fileWriter.flush();
-				fileWriter.close();
+				fileWriterLog.flush();
+				fileWriterRecette.flush();
+				fileWriterLog.close();
+				fileWriterRecette.close();
 			}catch (IOException e) {
 				System.out.println("Error while flushing/closing fileWriter !!!");
 				e.printStackTrace();
