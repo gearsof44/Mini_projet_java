@@ -1,5 +1,6 @@
 package Main;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.Date;
 public class Client {
 	
 	//attributs
+	static String logPath = "LOG/";
 	private int id;
 	private String nom;
 	private String prenom;
@@ -64,14 +66,19 @@ public class Client {
 	}
 
 	public void RetirerLocation(Location loc){
-		String outputFile = "archive.csv";
+		String strmonthEnd = Integer.toString(loc.getDateFin().getMonth());
+		if (strmonthEnd.length() == 1){
+			strmonthEnd = "0"+strmonthEnd;
+		}
+		String stryearEnd = Integer.toString(loc.getDateFin().getYear());
+		String outputFile = logPath+stryearEnd+strmonthEnd+".csv";
 		final String COMMA_DELIMITER = ",";
 		final String NEW_LINE_SEPARATOR = "\n";
 		
-		final String FILE_HEADER = "listeArticle,dateDebut,dateFin,montantFacture,coordonneesClient";
+		final String FILE_HEADER = "id,listeArticle,dateDebut,dateFin,montantFacture,coordonneesClient";
 		FileWriter fileWriter = null;
 		try {
-			fileWriter = new FileWriter(outputFile);
+			fileWriter = new FileWriter(outputFile, true);
 			fileWriter.append(FILE_HEADER.toString());
 			fileWriter.append(NEW_LINE_SEPARATOR);
 			fileWriter.append(String.valueOf(loc.getId()));
@@ -83,10 +90,10 @@ public class Client {
 			fileWriter.append(String.valueOf(loc.getDateFin()));
 			fileWriter.append(COMMA_DELIMITER);
 			fileWriter.append(String.valueOf(loc.getMontantFacture()));
-			fileWriter.append(NEW_LINE_SEPARATOR);
+			fileWriter.append(COMMA_DELIMITER);
 			fileWriter.append(String.valueOf(loc.getCoordonneesClient()));
 			fileWriter.append(NEW_LINE_SEPARATOR);
-			System.out.println("CSV file was created successfully !!!");
+			System.out.println("CSV log file was created successfully !!!");
 		} catch (Exception e) {
 			System.out.println("Error in CsvFileWriter !!!");
 			e.printStackTrace();
