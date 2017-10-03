@@ -21,8 +21,8 @@ public static void main (String args[]) throws IOException{
 		Client myClientTest = new Client(1, "DIDIER", "Jean", "ICI", "0658459545", listeLocationTest);
 		Location loc = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
 		Location loc2 = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, null);
-		myClientTest.AjouterLocation(loc);
-		myClientTest.RetirerLocation(loc);
-		
+		myClientTest.ajouterLocation(loc);
+		myClientTest.retirerLocation(loc);
+		myClientTest.getMontantRecette(dateFinTest, dateFinTest);
 	}
 }

@@ -11,7 +11,7 @@ public class Magasin {
 	 //attributs
 
 	private String gerant;
-	private String coordonnées;
+	private String coordonnees;
 	private ArrayList<Article> listeArticle;
 	
 	/**
@@ -19,9 +19,9 @@ public class Magasin {
 	 * @param coordonnées
 	 */
 	//Constructeur
-	public Magasin(String gerant, String coordonnées, ArrayList<Article> listeArticle) {
+	public Magasin(String gerant, String coordonnees, ArrayList<Article> listeArticle) {
 	this.gerant = gerant;
-	this.coordonnées = coordonnées;
+	this.coordonnees = coordonnees;
 	this.listeArticle = listeArticle;
 	}
 		
@@ -36,11 +36,11 @@ public class Magasin {
 	public void setGerant(String gerant) {
 		this.gerant = gerant;
 	}
-	public String getCoordonnées() {
-		return coordonnées;
+	public String getCoordonnees() {
+		return coordonnees;
 	}
-	public void setCoordonnées(String coordonnées) {
-		this.coordonnées = coordonnées;
+	public void setCoordonnees(String coordonnees) {
+		this.coordonnees = coordonnees;
 	}
 	public ArrayList<Article> getListeArticle() {
 		return listeArticle;
