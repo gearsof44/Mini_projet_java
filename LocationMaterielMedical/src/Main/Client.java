@@ -2,6 +2,9 @@ package Main;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -61,32 +64,46 @@ public class Client {
 		this.listeLocation = listeLocation;
 	}
 
-	public void AjouterLocation(Location loc){
+	public void ajouterLocation(Location loc){
 		this.listeLocation.add(loc);
 	}
 
-	public void RetirerLocation(Location loc){
+	//Permet de retirer une Location de la list de location active d'un Client
+	//Ajoute la location sous le fichier d'archivage et enregistre le montant gagné
+	//sous le fichier de recette
+	public void retirerLocation(Location loc){
 		String strmonthEnd = Integer.toString(loc.getDateFin().getMonth());
 		if (strmonthEnd.length() == 1){
 			strmonthEnd = "0"+strmonthEnd;
 		}
 		String stryearEnd = Integer.toString(loc.getDateFin().getYear());
+
+		//Definition des paths de nos deux fichiers recette et log
 		String outputFileCsv = logPath+stryearEnd+strmonthEnd+".loc.csv";
 		String outputFileRecette = logPath+"recette.csv";
+
+		//Definition du delimiteur et du separateur de ligne
 		final String COMMA_DELIMITER = ",";
 		final String NEW_LINE_SEPARATOR = "\n";
+
+		//Definition de nos deux fichiers recette et log
 		File fLog = new File(outputFileCsv);
 		File fRecette = new File(outputFileRecette);
+
+		//Definition des deux Headers
 		final String FILE_HEADER_LOG = "id,listeArticle,dateDebut,dateFin,montantFacture,coordonneesClient";
 		final String FILE_HEADER_RECETTE = "date,montantFacture";
 		FileWriter fileWriterLog = null;
 		FileWriter fileWriterRecette = null;
 		try {
 			fileWriterLog = new FileWriter(outputFileCsv, true);
+			//Si le fichier log n'existe pas renseigner le header
 			if (! fLog.exists()){
 				fileWriterLog.append(FILE_HEADER_LOG.toString());
 				fileWriterLog.append(NEW_LINE_SEPARATOR);
 			}
+
+			//Ajout des données dans le fichier log
 			fileWriterLog.append(String.valueOf(loc.getId()));
 			fileWriterLog.append(COMMA_DELIMITER);
 			fileWriterLog.append(String.valueOf(loc.getListeArticle()));
@@ -100,10 +117,14 @@ public class Client {
 			fileWriterLog.append(String.valueOf(loc.getCoordonneesClient()));
 			System.out.println("CSV log file was created successfully !!!");
 			fileWriterRecette = new FileWriter(outputFileRecette, true);
+
+			//Si le fichier recette n'existe pas renseigner le header
 			if (! fRecette.exists()){
 				fileWriterRecette.append(FILE_HEADER_RECETTE.toString());
 				fileWriterRecette.append(NEW_LINE_SEPARATOR);
 			}
+
+			//Ajout des données dans le fichier receete
 			fileWriterRecette.append(String.valueOf(loc.getDateFin()));
 			fileWriterRecette.append(COMMA_DELIMITER);
 			fileWriterRecette.append(String.valueOf(loc.getMontantFacture()));
@@ -113,6 +134,7 @@ public class Client {
 			e.printStackTrace();
 		}finally {
 			try {
+				//On ferme les différent writers
 				fileWriterLog.flush();
 				fileWriterRecette.flush();
 				fileWriterLog.close();
@@ -125,7 +147,40 @@ public class Client {
 		this.listeLocation.remove(loc);
 	}
 
-	public void AfficherLocationEnCours(){
+	//Permet de parcourir le fichier recette afin d'afficher les gains
+	//sur une période donnée
+	public void getMontantRecette(Date dateDebut, Date dateFin){
+		private int total = 0;
+		private static final int RECETTE_DATE = 0;
+    private static final int RECETTE_MONTANT = 1;
+		final String COMMA_DELIMITER = ",";
+		final String NEW_LINE_SEPARATOR = "\n";
+		String csvFile = logPath+"recette.csv";
+		BufferedReader fileReader = null;
+		HashMap<Date, double> hmap = new HashMap<Date, double>();
+		try {
+			String line = "";
+			fileReader = new BufferedReader(new FileReader(csvFile));
+			//Skip the read of the header
+			fileReader.readLine();
+			//Read the file line by line
+      while ((line = fileReader.readLine()) != null) {
+				//get all fields of the line
+				String[] tokens = line.split(COMMA_DELIMITER);
+				if (dateDebut < Date.parseDate(tokens[RECETTE_DATE]) < dateFin){
+					if (tokens.length > 0) {
+						hmap.put(Date.parseDate(tokens[RECETTE_DATE]), Double.parseDouble(tokens[RECETTE_DATE]));
+				}
+				Iterator it = hmap.entrySet().iterator();
+    		while (it.hasNext()) {
+        	Map.Entry pair = (Map.Entry)it.next();
+        	total += pair.getValue();
+        	it.remove();
+    }
+		System.out.println("Recette sur laps de temps donné : "+total);
+	}
+
+	public void afficherLocationEnCours(){
 		for (Location o : listeLocation){
 			strListeLocation += o.toString()+"\n";
 		}
