@@ -12,7 +12,7 @@ import java.util.Date;
  */
 
 public class Client {
-	
+
 	//attributs
 	static String logPath = "LOG/";
 	private int id;
@@ -21,7 +21,7 @@ public class Client {
 	private String adresse;
 	private String numTel;
 	private ArrayList<Location> listeLocation;
-	
+
 	//getter setter
 	public String getNom() {
 		return nom;
@@ -53,14 +53,14 @@ public class Client {
 	public void setNumTel(String numTel) {
 		this.numTel = numTel;
 	}
-	
+
 	public ArrayList<Location> getListeLocation() {
 		return listeLocation;
 	}
 	public void setListeLocation(ArrayList<Location> listeLocation) {
 		this.listeLocation = listeLocation;
 	}
-	
+
 	public void AjouterLocation(Location loc){
 		this.listeLocation.add(loc);
 	}
@@ -125,6 +125,14 @@ public class Client {
 		this.listeLocation.remove(loc);
 	}
 
+	public void AfficherLocationEnCours(){
+		for (Location o : listeLocation){
+			strListeLocation += o.toString()+"\n";
+		}
+		System.out.println("Locations en cours pour le client : "+nom+" "+prenom);
+		System.out.println();
+	}
+
 	public Client(int id, String nom, String prenom, String adresse, String numTel, ArrayList<Location> listeLocation) {
 		this.id = id;
 		this.nom = nom;
@@ -136,13 +144,15 @@ public class Client {
 
 	@Override
 	public String toString() {
-		String strListeLocation = "Pas de location en cours";
+		if (listeLocation.isEmpty()){
+			String strListeLocation = "Pas de location en cours";
+		}
 		for (Location o : listeLocation){
 			strListeLocation += o.toString();
 		}
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTel=" + numTel
 				+ ", listeLocation=" + strListeLocation;
 	}
-	
-	
+
+
 }
