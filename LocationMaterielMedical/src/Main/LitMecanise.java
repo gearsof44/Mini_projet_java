@@ -6,9 +6,10 @@ import java.util.ArrayList;
  * @author GUILLET & COTTREL
  *
  */
-public class LitMecanise extends TableEtLit{
-	 //attributs
 
+public class LitMecanise extends TableEtLit{
+	
+	//attributs
 	private int degreInclinaison;
 	
 	/**
@@ -52,7 +53,7 @@ public class LitMecanise extends TableEtLit{
 			System.out.println("hauteur: "+getHauteur());
 			System.out.println("poids maxium supporté: "+getPoidsMax());
 
-			System.out.println("Degré d'inclinaison: "+getDegreInclinaison());
+			System.out.println("Degre d'inclinaison: "+getDegreInclinaison());
 		}
 		
 	@Override

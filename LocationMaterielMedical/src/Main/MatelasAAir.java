@@ -6,9 +6,10 @@ import java.util.ArrayList;
  * @author GUILLET & COTTREL
  *
  */
-public class MatelasAAir extends Article{
-	 //attributs
 
+public class MatelasAAir extends Article{
+	
+	//attributs
 	private String longueur;
 	private String largeur;
 	private String hauteur;

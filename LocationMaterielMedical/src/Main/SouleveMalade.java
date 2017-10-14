@@ -6,9 +6,10 @@ import java.util.ArrayList;
  * @author GUILLET & COTTREL
  *
  */
-public class SouleveMalade extends Article{
-	 //attributs
 
+public class SouleveMalade extends Article{
+	
+	//attributs
 	private int capaciteLevage;
 	private int degrePivotFleau;
 	
@@ -41,8 +42,8 @@ public class SouleveMalade extends Article{
 			System.out.println("Modele: "+getModele());
 			System.out.println("Prix de la location par jour: "+getPrixLocationJour());
 			System.out.println("Nombre restant en stock: "+getNbStock());
-			System.out.println("Capacité de levage: "+getCapaciteLevage());
-			System.out.println("degré de pivot du fleau: "+getDegrePivotFleau());
+			System.out.println("Capacite de levage: "+getCapaciteLevage());
+			System.out.println("degre de pivot du fleau: "+getDegrePivotFleau());
 		}
 
 	@Override

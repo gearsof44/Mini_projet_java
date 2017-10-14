@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 
 public class TableAtile extends TableEtLit{
-	 //attributs
-
+	
+	//attributs
 	private boolean rabattre;
 	
 	//Constructeur
@@ -28,7 +28,7 @@ public class TableAtile extends TableEtLit{
 		this.rabattre = rabattre;
 	}
 	
-	//Affiche l'article
+	//Effectue un affichage de chaque attribut de l'article
 	public void afficherArticles(){  
 		System.out.println("Reference: "+getRef());
 		System.out.println("Marque: "+getMarque());
@@ -38,12 +38,12 @@ public class TableAtile extends TableEtLit{
 		System.out.println("longueur: "+getLongueur());
 		System.out.println("largeur: "+getLargeur());
 		System.out.println("hauteur: "+getHauteur());
-		System.out.println("poids maxium supporté: "+getPoidsMax());
-			if(isRabattre()){
-				System.out.println("La table peut se rabattre");
-			}else{
-				System.out.println("La table ne peut pas se rabattre");
-			}
+		System.out.println("poids maxium supporte: "+getPoidsMax());
+		if(isRabattre()){
+			System.out.println("La table peut se rabattre");
+		}else{
+			System.out.println("La table ne peut pas se rabattre");
+		}
 		}
 	
 	@Override

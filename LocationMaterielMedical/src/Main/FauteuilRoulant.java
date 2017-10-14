@@ -6,9 +6,10 @@ import java.util.ArrayList;
  * @author GUILLET & COTTREL
  *
  */
-public class FauteuilRoulant extends Article{
-	 //attributs
 
+public class FauteuilRoulant extends Article{
+	
+	//attributs
 	private int largeurAssise;
 	private double poidsFauteuil;
 	

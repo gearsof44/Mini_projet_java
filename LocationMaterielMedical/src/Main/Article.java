@@ -6,9 +6,10 @@ import java.util.ArrayList;
  * @author GUILLET & COTTREL
  *
  */
-public abstract class Article {
-	 //attributs
 
+public abstract class Article {
+	
+	//attributs
 	private int ref;
 	private String marque;
 	private String modele;

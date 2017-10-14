@@ -7,17 +7,18 @@ import java.util.Date;
  * @author GUILLET & COTTREL
  *
  */
-public class Magasin {
-	 //attributs
 
+public class Magasin {
+	
+	//attributs
 	private String gerant;
 	private String coordonnees;
 	private ArrayList<Article> listeArticle;
 	
 	/**
 	 * @param gerant
-	 * @param coordonnées
-	 */
+	 * @param coordonnees
+	 */	
 	//Constructeur
 	public Magasin(String gerant, String coordonnees, ArrayList<Article> listeArticle) {
 	this.gerant = gerant;
