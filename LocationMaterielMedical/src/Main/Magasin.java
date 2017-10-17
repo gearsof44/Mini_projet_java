@@ -119,8 +119,8 @@ public class Magasin {
 				}
 		}
 
-		public void getMontantRecette(Date dateDebut, Date dateFin) throws NumberFormatException, IOException{
-			getMontantRecette(dateDebut, dateFin, false);
-		}	
+	public void getMontantRecette(Date dateDebut, Date dateFin) throws NumberFormatException, IOException{
+		getMontantRecette(dateDebut, dateFin, false);
+	}	
 
 }
