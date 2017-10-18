@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner; 
 
 /**
  *
@@ -33,8 +34,7 @@ public class Magasin {
 	this.listeArticle = listeArticle;
 	}
 
-	public void main (String args[]){
-
+	public static void main (String args[]){
 	}
 
 	//getter setter
@@ -118,9 +118,5 @@ public class Magasin {
 					 }
 				}
 		}
-
-	public void getMontantRecette(Date dateDebut, Date dateFin) throws NumberFormatException, IOException{
-		getMontantRecette(dateDebut, dateFin, false);
-	}	
 
 }

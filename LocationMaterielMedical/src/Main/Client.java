@@ -62,6 +62,12 @@ public class Client {
 		return listeLocation;
 	}
 	public void setListeLocation(ArrayList<Location> listeLocation) {
+		for (Location item : listeLocation) {
+			ArrayList<Article> listeItem = item.getListeArticle();
+			for (Article art : listeItem) {
+				art.setDisponible(false);
+			}
+		}
 		this.listeLocation = listeLocation;
 	}
 
@@ -205,7 +211,7 @@ public class Client {
 		for (Location o : listeLocation){
 			strListeLocation += o.toString();
 		}
-		return "Client [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTel=" + numTel
+		return "Client [id="+ id + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", numTel=" + numTel
 				+ ", listeLocation=" + strListeLocation;
 	}
 

@@ -67,7 +67,8 @@ public class Location {
 	 * @param coordonneesClient
 	 */
 	//Constructeur
-	public Location(ArrayList<Article> listeArticle, Date dateDebut, Date dateFin, double montantFacture, Client coordonneesClient) {
+	public Location(int id, ArrayList<Article> listeArticle, Date dateDebut, Date dateFin, double montantFacture, Client coordonneesClient) {
+		this.id = id;
 		this.listeArticle = listeArticle;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
@@ -93,7 +94,10 @@ public class Location {
 
 	@Override
  	public String toString() {
-		String strListeArticle = "Pas d'articles";
+		String strListeArticle = "";
+		if (listeArticle.isEmpty()) {
+			strListeArticle = "Pas d'articles";
+		}
 		for (Article art : listeArticle){
 			strListeArticle += art.toString();
 		}

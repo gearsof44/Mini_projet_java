@@ -15,6 +15,7 @@ public abstract class Article {
 	private String modele;
 	private double prixLocationJour;
 	private int nbStock;
+	private boolean disponible;
 	
 	/**
 	 * 
@@ -30,6 +31,7 @@ public abstract class Article {
 		this.modele = modele;
 		this.prixLocationJour = prixLocationJour;
 		this.nbStock = nbStock;
+		this.disponible = true;
 	}
 	
 	//getter setter
@@ -63,19 +65,26 @@ public abstract class Article {
 	public void setNbStock(int nbStock) {
 		this.nbStock = nbStock;
 	}
-	
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
 	public static void afficherTousArticles(ArrayList<Article> listeArticle){
 	for(Article a:listeArticle){
-		a.afficherArticles();
+			a.afficherArticles();
 		}
 	}
 
-	//Affiche les specificités de l'article
+	//Affiche les specificites de l'article
 	public abstract void afficherArticles();
 	
 	@Override
 	public String toString() {
 		return "ref=" + ref + ", marque=" + marque + ", modele=" + modele + ", prixLocationJour="
-			+ prixLocationJour + ", nbStock=" + nbStock;
+			+ prixLocationJour + ", nbStock=" + nbStock + ", disponible=" + disponible;
 	}
 }
