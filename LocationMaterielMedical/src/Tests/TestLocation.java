@@ -28,16 +28,8 @@ public class TestLocation {
 		Date dateFinTest = new Date(2017,9,17);
 		ArrayList<Location> listeLocationTest = new ArrayList<Location>();
 		Client myClientTest = new Client(1, "DIDIER", "Jean", "ICI", "0658459545", listeLocationTest);
-		Location loc = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
+		Location loc = new Location(1,listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
 		System.out.println(loc.toString());
-		
-		//Test de calcul des recettes sur une période donnee
-		TestGetMontantRecette(loc, dateFinTest, dateFinTest);
-	}
-	
-	public static void TestGetMontantRecette(Location location, Date dateDebutLocation, Date dateFinLocation) throws NumberFormatException, IOException {
-		System.out.println("Test 3 : TestGetMontantRecette");
-		location.getMontantRecette(dateFinLocation,dateFinLocation, true);
 	}
 
 }

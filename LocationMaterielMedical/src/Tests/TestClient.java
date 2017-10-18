@@ -24,8 +24,8 @@ public class TestClient {
 		Date dateFinTest = new Date(2017,9,17);
 		ArrayList<Location> listeLocationTest = new ArrayList<Location>();
 		Client myClientTest = new Client(1, "DIDIER", "Jean", "ICI", "0658459545", listeLocationTest);
-		Location loc = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
-		Location loc2 = new Location(listeArticleTest, dateFinTest, dateFinTest, 110, null);
+		Location loc = new Location(1,listeArticleTest, dateFinTest, dateFinTest, 110, myClientTest);
+		Location loc2 = new Location(2,listeArticleTest, dateFinTest, dateFinTest, 110, null);
 		
 		//Test affichage des locations en cours pour un client
 		TestAfficherLocationEnCours(myClientTest);
